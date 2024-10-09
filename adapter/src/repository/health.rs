@@ -16,5 +16,5 @@ impl HealthCheckRepository for HealthCheckRepositoryImpl {
             .fetch_one(self.db.inner_ref())
             .await
             .is_ok()
-    }   
+    }
 }

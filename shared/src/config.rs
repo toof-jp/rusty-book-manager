@@ -13,7 +13,7 @@ impl AppConfig {
             password: std::env::var("DATABASE_PASSWORD")?,
             database: std::env::var("DATABASE_NAME")?,
         };
-        Ok(Self { database } )
+        Ok(Self { database })
     }
 }
 

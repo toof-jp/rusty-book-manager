@@ -1,4 +1,3 @@
-
 use axum::{extract::State, http::StatusCode};
 use registry::AppRegistry;
 

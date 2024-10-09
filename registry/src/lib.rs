@@ -15,7 +15,7 @@ impl AppRegistry {
             health_check_repository,
         }
     }
-    
+
     pub fn health_check_repository(&self) -> Arc<dyn HealthCheckRepository> {
         self.health_check_repository.clone()
     }
