@@ -1,6 +1,7 @@
+use std::str::FromStr;
+
 use serde::{Deserialize, Serialize};
 use shared::error::AppError;
-use std::str::FromStr;
 
 macro_rules! define_id {
     ($id_type: ident) => {

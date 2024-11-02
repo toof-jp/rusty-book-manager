@@ -1,4 +1,5 @@
-use std::{default, env};
+use std::env;
+
 use strum::EnumString;
 
 #[derive(Default, EnumString)]

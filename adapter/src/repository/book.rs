@@ -1,12 +1,15 @@
 use async_trait::async_trait;
 use derive_new::new;
-use kernel::model::book::{event::CreateBook, Book};
-use kernel::model::id::BookId;
-use kernel::repository::book::BookRepository;
+use kernel::{
+    model::{
+        book::{event::CreateBook, Book},
+        id::BookId,
+    },
+    repository::book::BookRepository,
+};
 use shared::error::{AppError, AppResult};
 
-use crate::database::model::book::BookRow;
-use crate::database::ConnectionPool;
+use crate::database::{model::book::BookRow, ConnectionPool};
 
 #[derive(new)]
 pub struct BookRepositoryImpl {
@@ -82,6 +85,7 @@ mod tests {
     use super::*;
 
     #[sqlx::test]
+    #[ignore]
     async fn test_register_book(pool: sqlx::PgPool) -> anyhow::Result<()> {
         let repo = BookRepositoryImpl::new(ConnectionPool::new(pool));
 

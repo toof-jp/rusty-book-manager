@@ -1,4 +1,7 @@
-use kernel::model::{book::{event::CreateBook, Book}, id::BookId};
+use kernel::model::{
+    book::{event::CreateBook, Book},
+    id::BookId,
+};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize)]
