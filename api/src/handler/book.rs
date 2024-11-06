@@ -11,8 +11,8 @@ use shared::error::{AppError, AppResult};
 use crate::{
     extractor::AuthorizedUser,
     model::book::{
-        BookListQuery, BookResponse, CreateBookRequest, PaginatedBookResponse,
-        UpdateBookRequest, UpdateBookRequestWithIds,
+        BookListQuery, BookResponse, CreateBookRequest, PaginatedBookResponse, UpdateBookRequest,
+        UpdateBookRequestWithIds,
     },
 };
 
@@ -65,9 +65,9 @@ pub async fn update_book(
     Json(req): Json<UpdateBookRequest>,
 ) -> AppResult<StatusCode> {
     req.validate(&())?;
-    
+
     let update_book = UpdateBookRequestWithIds::new(book_id, user.id(), req);
-    
+
     registry
         .book_repository()
         .update(update_book.into())
@@ -84,7 +84,7 @@ pub async fn delete_book(
         book_id,
         requested_user: user.id(),
     };
-    
+
     registry
         .book_repository()
         .delete(delete_book)
