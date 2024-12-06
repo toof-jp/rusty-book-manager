@@ -59,5 +59,4 @@ impl IntoResponse for AppError {
     }
 }
 
-// エラー型が `AppError` なものを扱える `Result` 型
 pub type AppResult<T> = Result<T, AppError>;
